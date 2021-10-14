@@ -7,5 +7,5 @@ class AnswerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = ("answer", "question_id", "question_type")
+        fields = ("id", "answer", "question_id", "question_type")
         read_only_fields = ("question_id",)

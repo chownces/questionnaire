@@ -45,6 +45,36 @@ class FormSerializer(serializers.ModelSerializer):
 
         return form_instance
 
+    def update(self, instance, validated_data):
+        # NOTE: For a simplified implementation, this method does a cascading delete on all existing questions,
+        # choices, submissions, answers in this form. As a result, updating a form would cause existing submissions
+        # and answers to be lost.
+        instance.questions.all().delete()
+
+        instance.title = validated_data["title"]
+        questions = validated_data.pop("questions")
+
+        # Handle recreation of questions and corresponding choices
+        for question in questions:
+            choices = []
+            if "choices" in question:
+                choices = question.pop("choices")
+
+            question_instance = Question.objects.create(
+                **question,
+                form_id=instance,
+            )
+
+            choices = map(
+                lambda c: Choice.objects.create(**c, question_id=question_instance),
+                choices,
+            )
+
+            question_instance.choices.set(choices)
+
+        instance.save()
+        return instance
+
     def validate(self, data):
 
         # Input: List of objects, and the field to check for running order. One-indexed.

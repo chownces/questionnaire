@@ -369,3 +369,38 @@ class FormTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(Form.objects.count(), self.num_forms_default)
         self.assertEqual(Question.objects.count(), self.num_questions_default)
+
+    def test_put_form_success(self):
+        data = {
+            "title": "updated title",
+            "questions": [
+                {
+                    "display_order": 1,
+                    "question": "question 1",
+                    "question_type": "RADIO",
+                    "choices": [
+                        {"choice_id": 1, "choice": "yes"},
+                        {"choice_id": 2, "choice": "no"},
+                    ],
+                },
+                {
+                    "display_order": 2,
+                    "question": "question 2",
+                    "question_type": "TEXTBOX",
+                },
+            ],
+        }
+        original_title = FormSerializer(self.form1).data["title"]
+
+        response = self.client.put(
+            reverse("forms-detail", args=[1]), data, content_type="application/json"
+        )
+
+        updated_form = Form.objects.get(id=1)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(Form.objects.count(), self.num_forms_default)
+        self.assertEqual(
+            Question.objects.count(), 2
+        )  # updated to 2 questions instead of 5 originally
+        self.assertNotEqual(original_title, FormSerializer(updated_form).data["title"])
