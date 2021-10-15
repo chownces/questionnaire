@@ -15,7 +15,7 @@ class SubmissionTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Setup 1 form of 3 questions, with 2 sets of submissions and answers
-        cls.question_types = ["RADIO", "CHECKBOX", "TEXTBOX"]
+        cls.question_types = ["radio", "checkbox", "textbox"]
         cls.num_questions_default = len(cls.question_types)
         cls.num_forms_default = 2
         cls.num_submissions_default = 2

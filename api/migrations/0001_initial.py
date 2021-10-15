@@ -66,9 +66,9 @@ class Migration(migrations.Migration):
                     "question_type",
                     models.CharField(
                         choices=[
-                            ("TEXTBOX", "textbox"),
-                            ("CHECKBOX", "checkbox"),
-                            ("RADIO", "radio"),
+                            ("textbox", "textbox"),
+                            ("checkbox", "checkbox"),
+                            ("radio", "radio"),
                         ],
                         max_length=20,
                     ),

@@ -91,7 +91,7 @@ class FormSerializer(serializers.ModelSerializer):
 
             return True
 
-        QUESTION_TYPES_WITH_CHOICES = ["RADIO", "CHECKBOX"]
+        QUESTION_TYPES_WITH_CHOICES = ["radio", "checkbox"]
 
         def validate_choices(question):
             choices = []

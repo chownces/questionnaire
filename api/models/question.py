@@ -4,9 +4,9 @@ from . import Form
 
 class Question(models.Model):
     QuestionTypes = (
-        ("TEXTBOX", "textbox"),
-        ("CHECKBOX", "checkbox"),
-        ("RADIO", "radio"),
+        ("textbox", "textbox"),
+        ("checkbox", "checkbox"),
+        ("radio", "radio"),
     )
 
     form_id = models.ForeignKey(

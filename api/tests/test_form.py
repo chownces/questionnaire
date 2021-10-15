@@ -43,7 +43,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -52,12 +52,12 @@ class FormTest(TestCase):
                 {
                     "display_order": 2,
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
                 {
                     "display_order": 3,
                     "question": "question 3",
-                    "question_type": "CHECKBOX",
+                    "question_type": "checkbox",
                     "choices": [
                         {"choice_id": 1, "choice": "option1"},
                         {"choice_id": 2, "choice": "option2"},
@@ -98,7 +98,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -107,7 +107,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 3,  # wrong display_order
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
             ],
         }
@@ -129,7 +129,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 0,  # should start from 1
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -138,7 +138,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
             ],
         }
@@ -160,7 +160,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 1, "choice": "no"},  # invalid choice_id
@@ -169,12 +169,12 @@ class FormTest(TestCase):
                 {
                     "display_order": 2,
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
                 {
                     "display_order": 3,
                     "question": "question 3",
-                    "question_type": "CHECKBOX",
+                    "question_type": "checkbox",
                     "choices": [
                         {"choice_id": 1, "choice": "option1"},
                         {"choice_id": 2, "choice": "option2"},
@@ -201,7 +201,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -210,7 +210,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 2,
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"}
                     ],  # textbox questions should not have choices
@@ -218,7 +218,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 3,
                     "question": "question 3",
-                    "question_type": "CHECKBOX",
+                    "question_type": "checkbox",
                     "choices": [
                         {"choice_id": 1, "choice": "option1"},
                         {"choice_id": 2, "choice": "option2"},
@@ -245,7 +245,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [],
                 }
             ],
@@ -268,7 +268,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "CHECKBOX",
+                    "question_type": "checkbox",
                 }
             ],
         }
@@ -290,7 +290,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -298,7 +298,7 @@ class FormTest(TestCase):
                 },
                 {
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
             ],
         }
@@ -316,7 +316,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -324,7 +324,7 @@ class FormTest(TestCase):
                 },
                 {
                     "display_order": 2,
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
             ],
         }
@@ -342,7 +342,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -377,7 +377,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 1,
                     "question": "question 1",
-                    "question_type": "RADIO",
+                    "question_type": "radio",
                     "choices": [
                         {"choice_id": 1, "choice": "yes"},
                         {"choice_id": 2, "choice": "no"},
@@ -386,7 +386,7 @@ class FormTest(TestCase):
                 {
                     "display_order": 2,
                     "question": "question 2",
-                    "question_type": "TEXTBOX",
+                    "question_type": "textbox",
                 },
             ],
         }
