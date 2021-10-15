@@ -143,6 +143,9 @@ Example return:
 ```
 
 ### POST `/forms` and PUT `/forms/:id`:
+* `display_order` and `choice_id` represent the question order within a form, and choice order within a question respectively. Both must be in running order starting from 1
+* `question_type` must be one of `textbox`, `checkbox` or `radio`
+
 Example JSON:
 ```
 {
