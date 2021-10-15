@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Choice, Form, Question
+from api.models import Choice, Form, Question, Submission
 from . import QuestionSerializer
 
 
@@ -50,6 +50,7 @@ class FormSerializer(serializers.ModelSerializer):
         # choices, submissions, answers in this form. As a result, updating a form would cause existing submissions
         # and answers to be lost.
         instance.questions.all().delete()
+        Submission.objects.filter(form_id=instance).delete()
 
         instance.title = validated_data["title"]
         questions = validated_data.pop("questions")
