@@ -58,6 +58,10 @@ Before pushing to GitHub, ensure that your code is formatted and your tests are 
     * Implementation details will depend on usecase
 1. Forms can be shared with others via a unique link
 
+## Entity-Relationship Diagram
+<img width="917" alt="image" src="https://user-images.githubusercontent.com/53928333/137465676-41b0b512-82fd-48a9-9ea5-1581a7987487.png">
+* (generated with DBeaver)
+
 ## API Summary
 
 ### GET `/forms` and GET `/forms/:id`:
