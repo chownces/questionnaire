@@ -10,25 +10,15 @@ from .serializers import (
 from .models import Form, Submission
 
 
-class FormViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
-):
+class FormViewSet(viewsets.ModelViewSet):
     queryset = Form.objects.all().order_by("id")
+    http_method_names = ["get", "post", "put", "head"]
     serializer_class = FormSerializer
 
 
-class SubmissionViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
-):
+class SubmissionViewSet(viewsets.ModelViewSet):
     queryset = Submission.objects.all().order_by("form_id")
+    http_method_names = ["get", "post", "put", "head"]
 
     def get_serializer_class(self):
         method = self.request.method
