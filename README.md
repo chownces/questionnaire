@@ -5,6 +5,8 @@ A summary of the API can be found in the [Endpoints](#Endpoints) and [API Summar
 
 As this is my first project using DRF and was done within a week, the codebase might not be as polished as it can be 😅.
 
+A demo of this project is deployed on Heroku [here](https://qns-api.herokuapp.com/forms/). Do note that it may take up to a minute for the app to load initially, as it is deployed on Heroku's free tier.
+
 ## Endpoints
 * `/forms`:
     * [`GET`](#GET-forms-and-GET-formsid): Get all forms
@@ -25,12 +27,18 @@ As this is my first project using DRF and was done within a week, the codebase m
 1. The answers sent to the `/submissions` endpoint will be given in the `display_order` of questions in the specified form.
 
 ## Getting Started
+### Local Development
 1. Install a stable release of Python (e.g. version 3.8).
 1. Clone this repository and navigate to it using "cd" in your command line or shell tool.
 1. Run `pip3 install -r requirements_dev.txt` to install all dependencies.
-    * For production setups, run `pip3 install -r requirements.txt` to exclude dev dependencies
 1. Setup the database via `python manage.py migrate`.
 1. Run `python manage.py runserver` to start the server at `http://localhost:8000`
+
+### Deployment to production
+1. The deployment configuration for Heroku is already set up on the `heroku` branch. To deploy:
+    * Set up a new app on Heroku, and provision a Postgres database add-on
+    * Deploy the `heroku` branch of this repository to the above app on Heroku
+    * Run `python manage.py migrate` on this Heroku app to setup the Postgres database
 
 ## Development
 ### Running Tests
