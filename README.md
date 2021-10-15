@@ -20,7 +20,7 @@ A demo of this project is deployed on Heroku [here](https://qns-api.herokuapp.co
     * [`POST`](#POST-submissions-and-PUT-submissionsid): Create a new submission
 * `/submissions/:id`:
     * [`GET`](#GET-submissions-and-GET-submissionsid): Get submission by id
-    * [`POST`](#POST-submissions-and-PUT-submissionsid): Update submission by id
+    * [`PUT`](#POST-submissions-and-PUT-submissionsid): Update submission by id
     
 ## Assumptions
 1. The frontend will preprocess the form data or CSV file into JSON before sending information to this API
